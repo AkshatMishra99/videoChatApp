@@ -1,10 +1,12 @@
 const express = require("express");
+const peer = require("peer");
 const app = express();
 const path = require("path");
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
 const { v4: uuidV4 } = require("uuid");
 app.use(express.static(path.join(__dirname, "/public")));
+app.use("/peer", peer.ExpressPeerServer(app, { proxied: true }));
 app.set("view engine", "ejs");
 app.get("/", (req, res) => {
     res.redirect(`/${uuidV4()}`);

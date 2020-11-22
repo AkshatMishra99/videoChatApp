@@ -37,6 +37,7 @@ socket.on("user-disconnected", (userID) => {
 //when peer connects
 peer.on("open", (id) => {
     socket.emit("join-room", ROOM_ID, id);
+    console.log("connected to peer");
 });
 
 //function to add video stream of other user connected
