@@ -7,6 +7,7 @@ const peer = new Peer(undefined, {
 });
 const peers = {};
 const myvideo = document.createElement("video");
+myvideo.classList.add("user-video");
 myvideo.muted = true;
 
 //code to open webcam and send the stream to all other users
