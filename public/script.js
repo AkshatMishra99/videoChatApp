@@ -28,7 +28,8 @@ navigator.mediaDevices
                 addVideoStream(video, userVideoStream);
             });
         });
-    });
+    })
+    .catch((err) => alert(err.message));
 
 //when user disconnects
 socket.on("user-disconnected", (userID) => {
