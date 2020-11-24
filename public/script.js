@@ -13,7 +13,7 @@ myvideo.muted = true;
 //code to open webcam and send the stream to all other users
 navigator.mediaDevices
     .getUserMedia({
-        video: true,
+        video: { facingMode: "user" },
         audio: true,
     })
     .then((stream) => {
